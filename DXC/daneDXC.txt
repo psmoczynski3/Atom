@@ -1,0 +1,164 @@
+WBS
+US1-AAS01.01.39 - vivat
+US1-AAS01.01.80 - general
+GB1-LBS01.01.01.03 - LBS
+DE1-APO31.02.05.02 - APO
+
+US1-AAS01.01.34 - AMIA ACP/NAB
+US1-AAS01.01.51 - Caaseis
+
+PL1-PGBCS.40.63 - nie
+US1-PGDAT.06.25 - PG ADW
+US1-PGDAP.06.04 - PG role
+
+CASEIS:
+1.	Connect to one Vertica node i.e.  CACVERLUX603 with user : datana1         password: Rae2fei8
+2.	sudo –su root
+3.	sudo –su dbadmin
+
+
+
+Vivat:
+
+
+
+find /oracle/PRDACP01/app/oracle/admin/PRDACP01/diag/rdbms/prdacp01/PRDACP01/trace -type f -mmin -120  -exec cp -pf {} /tmp/psm/ \;
+
+
+du -a /ora_homes | sort -n -r | head -n 20
+
+
+Mariusz
+1. infrasec Mariusza do LBS odnowić
+2. Mariusz w Oracle
+
+
+Seweryn
+1. bazy relacyjne na azure
+2. promocja do exp
+3. szkolenie z ms sql
+
+Błażej
+- zwiększenie alokacji, pogadać z Sebastianem
+
+
+Tomek K
+- inne zadania, możliwe że MS SQL lub Postgres
+- chce pracować przy chmurach i etl/warehouse
+
+Kamil P
+- szkolenie z ansibla
+- Goławski, napisać że Kamil też
+
+
+
+
+Building the technical and process expertise in Database Administration area.
+
+select resource_name, current_utilization, max_utilization from v$resource_limit where resource_name in ('processes','sessions');
+
+L(@2'C"b/_W%Caxb
+
+
+./MASK1_setlogging_20210428_1443.log:ORA-01418: specified index does not exist
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-02298: cannot validate (COREOWN.NYBAC_FINST_FK) - parent keys not found
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./MASK1_createconstraints_20210428_1443.log:ORA-00604: error occurred at recursive SQL level 1
+./MASK1_createconstraints_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./re_create_scramble_20210428_1443.log:ORA-01918: user 'SCRAMBLE' does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./re_create_scramble_20210428_1443.log:ORA-01432: public synonym to be dropped does not exist
+./parties_script_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./parties_script_20210428_1443.log:ORA-06512: at "SYS.DBMS_METADATA", line 6731
+./parties_script_20210428_1443.log:ORA-06512: at "SYS.DBMS_LOB", line 741
+./parties_script_20210428_1443.log:ORA-06512: at "SYS.DBMS_METADATA", line 6569
+./parties_script_20210428_1443.log:ORA-06512: at "SYS.DBMS_METADATA", line 9734
+./parties_script_20210428_1443.log:ORA-06512: at line 1
+./parties_script_20210428_1443.log:ORA-06512: at line 28
+./parties_script_20210428_1443.log:ORA-01917: user or role 'COREOBJ_SEL_ROLE' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'DIS10GADM_SELECT_ROLE' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'ENQ_USER' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6000V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6010V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6030V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6040V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6050V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'LEA6060V' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'ROLE_ENQ' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'R_OBJECTS' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'U04888' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'U08691' does not exist
+./parties_script_20210428_1443.log:ORA-01917: user or role 'U_OBJECTS' does not exist
+./MASK1_INSIGHT_PARTIES_bupdate_20210428_1443.log:ORA-01555: snapshot too old: rollback segment number 10 with name
+./MASK1_INSIGHT_PARTIES_bupdate_20210428_1443.log:ORA-06512: at "COREOWN.UP_1828732", line 24
+./MASK1_INSIGHT_PARTIES_bupdate_20210428_1443.log:ORA-06512: at line 2
+./refresh_views_20210428_1443.log:ORA-04044: procedure, function, package, or type is not allowed here
+./refresh_views_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./refresh_views_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./refresh_views_20210428_1443.log:ORA-20019: ORA-14551: cannot perform a DML operation inside a query - occurred
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.PACK_AFFORDABILITY_AUDIT", line 1352- occurred in
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.YBS_APPLICATION_ERROR", line 148
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.PACK_LEAP_DIARY", line 1806
+./refresh_views_20210428_1443.log:ORA-04044: procedure, function, package, or type is not allowed here
+./refresh_views_20210428_1443.log:ORA-20019: ORA-14551: cannot perform a DML operation inside a query - occurred
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.PACK_AFFORDABILITY_AUDIT", line 1352- occurred in
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.YBS_APPLICATION_ERROR", line 148
+./refresh_views_20210428_1443.log:ORA-06512: at "COREOWN.PACK_LEAP_DIARY", line 1806
+./MASK1_COREOWN_POSTAL_ADDRESSES_PSTADD_OPT1_I_20210428_1443.log:ORA-25153: Temporary Tablespace is Empty
+./update_PARTY_HISTORIES_20210428_1443.log:ORA-30036: unable to extend segment by 8 in undo tablespace 'UNDO001'
+./MASK1_dropconstraints_20210428_1443.log:ORA-02443: Cannot drop constraint  - nonexistent constraint
+./MASK1_enablecheckcons_20210428_1443.log:ORA-02430: cannot enable constraint (IRRB_CRN_CHK) - no such constraint
+./MASK1_enablecheckcons_20210428_1443.log:ORA-02430: cannot enable constraint (IRRB_CRN9_CHK) - no such constraint
+
+
+alter tablespace temp001 add tempfile '/ora_data/LBSCOREY_data/LBSCOREY/datafile/temp001.dbf' size 2G;
+alter tablespace undo001 add datafile '/ora_data/LBSCOREY_data/LBSCOREY/datafile/undo001.dbf' size 8G;
+
+
+ export RCV_CAT_DB=LBSRMAN.WORLD
+#export RCV_CAT_DB=
+export RCV_CAT_OWNER=RMAN
+#RCV_CAT_OWNER=
+export RCV_CAT_PASS=rman2014
+#RCV_CAT_PASS=
+#======================================================================================
+export PW=""
+export INITPW="Andromeda_1"
+
+
+nadgodziny
+28.04 - 3h od 21 depersonalizacja devy
+29.04 - 1h od 21 wgranie pakietu i błędy
+30.04 - 1h od 21 ten sam pakiet ale poprawiony
+
+
+
+1. timeline
+2. requestor
+
+
+orapwd file=/ora_homes/LBSDEVZ_HOME/product/19.0.0/dbhome_1/dbs/orapwLBSCOREZ password=Andromeda_4 ignorecase=y entries=10 force=y

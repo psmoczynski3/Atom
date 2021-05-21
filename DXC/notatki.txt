@@ -1,0 +1,1412 @@
+ukdoxspllib614.1553.1336.ecs.hp.com
+ukbilspllib613.1553.1336.ecs.hp.com
+ukdoxspllib309.1554.1336.ecs.hp.com
+ukbilsplib009.1554.1336.ecs.hp.com
+ukbilsplib099.1554.1336.ecs.hp.com
+ukbilspllib119.1543.1336.ecs.hp.com
+ukdoxspllib319.1543.1336.ecs.hp.com
+ukbilspllib623.1553.1336.ecs.hp.com
+ukdoxspllib624.1553.1336.ecs.hp.com
+
+
+
+ukbilspllib613.1553.1336.ecs.hp.com
+ukdoxspllib614.1553.1336.ecs.hp.com
+ukdoxspllib309.1543.1336.ecs.hp.com
+ukbilsplib009.1543.1336.ecs.hp.com
+ukbilspllib099.1543.1336.ecs.hp.com
+sshgregemea01.ssn.entsvcs.com
+sshgregemea03.ssn.entsvcs.com
+ukbilspllib119.1543.1336.ecs.hp.com
+ukbilsvllib016.1543.1336.ecs.hp.com
+
+
+plink.exe sshgregemea01.ssn.entsvcs.com -l dxpsmocz -agent -nc %host:%port
+
+
+
+
+CG 0019 2652 4IS
+22 548 14 42 / 44
+
+
+9817 - numer pozycji magazynowej
+
+urząd celny -
+dowód zakupu
+
+22 548 13 44
+
+zgloszenia.ucs.441010@mf.gov.pl
+
+jak mozesz to od razu pusc tez:
+alter system set db_file_name_convert='/exports/BARNEY_DATAFILES/', '/u23/oradata/LBSCBCY/BARNEY_DATAFILES/', '/u223/oradata/LBSCOREY/dbf/', '/u244/oradata/LBSCBCY/dbf/';
+
+
+
+
+GM 293 100 548 008 029 890
+
+
+gra magnetyczna statki: 887 123 408
+
+https://www.udemy.com/the-complete-developers-guide-to-mongodb/learn/v4/overview
+https://www.udemy.com/python-for-data-science-and-machine-learning-bootcamp/learn/v4/overview
+https://www.udemy.com/complete-python-bootcamp/learn/v4/overview
+https://www.udemy.com/the-complete-ruby-on-rails-developer-course/learn/v4/overview
+
+
+50 PLN – 10 sztuk
+100 PLN –10 sztuk
+200 PLN – 10 sztuk
+500 PLN –10 sztuk
+1000 PLN – 5 sztuk
+
+
+
+
+
+doradzca PKO - cesja
+Joanna Kisiołek
++48 22 53 200 19
+
+
+Plakat WORLD STYLE COFFEE - Follygraph (rozmiar: 40 x 50 cm)
+Paulina Nowicka
+ul. Katowicka 81e/111
+61-131 Poznań
+telefon: 662152643
+Email: paula2061@wp.pl
+
+
+
+
+
+
+/ora_admin/scripts/refresh/CloneFO_nbu.sh LBSFOX "10/01/2019 08:00:00"
+/ora_admin/scripts/refresh/CloneFO_nbu_psm.sh LBSFOX "11/01/2019 08:00:00"
+
+
+channel c1: Veritas NetBackup for Oracle - Release 8.1.1 (2018020320)
+
+allocated channel: c2
+channel c2: SID=332 device type=SBT_TAPE
+channel c2: Veritas NetBackup for Oracle - Release 8.1.1 (2018020320)
+
+Starting Duplicate Db at 10-JAN-19
+
+contents of Memory Script:
+{
+   set until scn  3202121155385;
+   restore clone spfile to  '/ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora';
+   sql clone "alter system set spfile= ''/ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora''";
+}
+executing Memory Script
+
+executing command: SET until clause
+
+Starting restore at 10-JAN-19
+
+WARNING: A restore time was estimated based on the supplied UNTIL SCN
+released channel: c1
+released channel: c2
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of Duplicate Db command at 01/10/2019 17:51:32
+RMAN-05501: aborting duplication of target database
+RMAN-03015: error occurred in stored script Memory Script
+RMAN-06026: some targets not found - aborting restore
+RMAN-06729: no backup of the SPFILE found to restore
+
+RMAN>
+RMAN>
+
+Recovery Manager complete.
+
+
+
+run
+{
+ALLOCATE AUXILIARY CHANNEL c1 type 'SBT_TAPE' PARMS 'ENV=(SBT_LIBRARY=/usr/openv/netbackup/bin/libobk.so64,NB_ORA_CLIENT=lbsprdscfo.1553.1336.ecs.hp.com)';
+ALLOCATE AUXILIARY CHANNEL c2 type 'SBT_TAPE' PARMS 'ENV=(SBT_LIBRARY=/usr/openv/netbackup/bin/libobk.so64,NB_ORA_CLIENT=lbsprdscfo.1553.1336.ecs.hp.com)';
+
+        DUPLICATE DATABASE LBSFO DBID 4092543698 to ${ORACLE_SID}
+        UNTIL TIME "to_date('${TIME}','DD/MM/YYYY HH24:MI:SS')"
+        SPFILE
+              SET DB_NAME='${ORACLE_SID}'
+              SET DB_RECOVERY_FILE_DEST='/ora_data/${ORACLE_SID}_fra'
+              SET DB_CREATE_FILE_DEST='/ora_data/${ORACLE_SID}_data'
+              SET DIAGNOSTIC_DEST='/ora_data/${ORACLE_SID}_diag'
+              SET AUDIT_FILE_DEST='/ora_data/${ORACLE_SID}_diag/audit'
+              SET LOCAL_LISTENER='(address=(protocol=tcp)(host=${NBU_CLIENT})(port=1521))'
+              RESET CONTROL_FILES
+              RESET DB_FILE_NAME_CONVERT
+              RESET LOG_FILE_NAME_CONVERT;
+
+}
+
+exit
+_EOF
+
+
+
+
+rman target / catalog rman/rman2014@LBSRMAN
+
+
+RESTORE SPFILE TO PFILE '/tmp/initLBSCORE2.ora';
+
+.db_file_name_convert=('/u22/oradata/LBSFO/dbf','/ora_data/LBSFOX_data/LBSFOX/datafile')
+*.LOG_FILE_NAME_CONVERT=('/u22/oradata/LBSFO/redo','/ora_data/LBSFOX_data/LBSFOX/onlinelog')
+/ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs
+
+cp /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora.psm /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora
+
+cp /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSCOREX.ora.psm /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSCOREX.ora
+
+[‎12.‎01.‎2019 22:32]  Kerpcar, Milos (ECSO Backup Technical Owner):
+its really diff client as  ukbilspllib119.1543.1336.ecs.hp.com
+
+[‎12.‎01.‎2019 22:33]
+so i should replace the address with this?
+
+
+${ORACLE_HOME}/bin/sqlplus / as sysdba << EOF
+shutdown immediate;
+exit;
+EOF
+
+cp /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora.psm /ora_homes/LBSSITX_HOME/product/11.2.0/dbhome_1/dbs/spfileLBSFOX.ora
+
+NOFILENAMECHECK;
+
+Regał dziecięcy niebieski - Bloomingville	5711173154586
+
+kochanowskiego
+22
+przy agorze
+22 569 11 03
+
+oddział 7 ps 1
+
+
+pko powstańców
+renata rumianek
+22 532 00 16
+
+
+
+
+
+New Vertica administrator in Warsaw DBA team.
+
+VV8@nh3Fp3$K4@Qe
+?mc-PW979Pcm2Jqx
+
+x?A+87-_j58q^*jw
+wMedd^yRK7g*v+cH
+
+Jürgen Steinke
+Leistikowstr. 64
+14612 Falkensee/Germany
+
+
+Server Inventory
+
+#	Machine Name	OS	Software/s	Public IP Address *	Private
+Line IP‡	Environment
+1	vivatc1v10-11	RHEL 6.7x64	Vertica	206.164.180.161	30.253.10.11	PROD
+2	vivatc1v10-12	RHEL 6.7x64	Vertica	206.164.180.162	30.253.10.12	PROD
+3	vivatc1v10-13	RHEL 6.7x64	Vertica	206.164.180.163	30.253.10.13	PROD
+4	vivatc1v2-11	RHEL 6.7x64	IPA Master	206.164.180.71	30.252.14.11	PROD
+5	vivatc1v2-12	RHEL 6.7x64	IPA Replica / Chef	206.164.180.72	30.252.14.12	PROD
+6	vivatc1v10-21	RHEL 6.7x64	Vertica	206.164.180.171	30.253.10.21	TEST
+7	vivatc1v10-22	RHEL 6.7x64	Vertica	206.164.180.172	30.253.10.22	DEV
+8	vivatc1v2-21	RHEL 6.7x64	IPA Master	206.164.180.81	30.252.14.21	DEV&TEST
+9	vivatc1v2-22	RHEL 6.7x64	IPA Replica / Chef	206.164.180.82	30.252.14.22	DEV&TEST
+10	vivatc1v10-23	RHEL 6.7x64	Talend	206.164.180.173	30.253.10.23	DEV
+11	vivatc1v10-14	RHEL 6.7x64	Talend	206.164.180.164	30.253.10.14	PROD
+12	vivatc1v10-15	RHEL 6.7x64	Talend	206.164.180.165	30.253.10.15	PROD
+13	vivatc1v10-24	RHEL 6.7x64	Talend	206.164.180.174	30.253.10.24	TEST
+
+
+Kilka uwag – zarzadzanie userow
+
+1.1 - 10 ooh 200
+10.1 - 9 ooh 150
+11.1 - 4,5 ooh 150, 2,1 ooh 210
+12.1 - 16 ooh 200, 9 ooh 150
+13.1 - 10 ooh 200
+
+
+
+Najem bez czynszu: 1137,47
+
+E2-IM019155796
+Assignee has been changed, Update Email Notification was sent to - EMEA_KARPINSE, Assignment Group - E-INCSSP-LIBRA-APPSPL
+
+
+
+GADSS Team - create an inc to create amia account
+sample email from thelepathy
+HPSM - thelepathy will help creating the ticket
+document to jump server
+
+
+BBI07N
+
+Kids Concept
+Agnieszka Pokorska
+ul. Morska 174
+81-222 Gdynia
+
+Świetnie, bardzo dziękujemy, to na pewno pozwoli uniknąć pomyłek 🙂 Jeśli chodzi o te tapety przyjęte dzisiaj [174] - producent ma zwyczaj wysyłać w jednej dostawie wszystkie rolki z tej samej partii, więc proszę ją przyjąć pod tym samym batch number. Gdyby mogła Pani jedynie porównać odcień, czy na oko się nie różni. Dziękuję 🙂
+
+
+80/90/40
+25/20/140
+20 20 kg
+
+
+Plakat PTAKI - FOX ART STUDIO (rozmiar: 50 x 70 cm)
+
+58 320 60 20
+
+wMedd^yRK7g*v+cH
+UCw8aG5r?2%6-gzG
+
+30.148.4.11
+
+blok B
+P2
+226
+
+
+
+
+Dywan bawełniany serce PUFFY LOVE - Lorena Canals [KP: C-PUFFY-LOVE]
+Bartłomiej Błaszczak
+ul. Biedronki 61/5
+02-959 Warszawa
+telefon: 601801612
+Email: jossarianb@wp.pl
+
+
+/images/upload/magiapolnocy-header-popup.jpg
+
+ING Jacek
+28 1050 1461 1000 0092 5571 1971
+
+2019030441223
+07195000012006000457220001
+
+
+Miska porcelanowa biała Ø 11 cm – 2 szt.
+Miska porcelanowa biała Ø 14 cm – 6 szt.
+Miska porcelanowa biała Ø 17 cm – 4 szt.
+
+1st
+xLG7!.R!ut5e.Jv
+FV&AmuYqx!7dGVBR
+
+
+rgb(210, 162, 142);
+
+11 500
+
+snmp
+
+Hello team,
+Account was created
+User name is: a-smoczypa
+Password will be sent in separate mail.
+ApoB@nk2018
+Ap@Bank1137
+RCLAD-APO-EMEA
+
+SELECT mem_id, seg_product, seg_desc, lvl3_seg, lvl2_seg, SUM(sales) AS sales, COUNT(fin_txn_id) AS transactions FROM aip.temp_fin_m0 GROUP BY mem_id, seg_product, seg_desc, lvl3_seg, lvl2_seg;
+
+/opt/vertica/examples/VMart_Schema/psmoczynski3_01.sql
+
+
+
+Zawieszenie do lamp CANNONBALL CLUSTER - UMAGE [KP: 4089] (kolor: biały, rodzaj: podwójny)
+
+
+mariusz garwacki
+500 065 915
+
+
+still blue clasic + dhalia
+http://b2b.fermliving.com/?f=content&l=en&s=item&i=901 x14
+
+
+Dywan bawełniany TERRAZZO - różne kolory - Lorena Canals [KP: C-TERRA-EMER] (kolor: emerald | szmaragdowy)
+Kristina Hristova
+ul. Choloniewskiego 6/18
+85-125 Bydgoszcz
+telefon: 606669996
+Email: stiszka@op.pl
+
+
+Likwidator NN:
+22 101 71 11
+Mentax
+
+Kod: 7040
+EAN: 5701311970406
+
+
+wredestain y96
+690 ultra vorti
+
+pirelli
+ponad 900
+
+falken y96
+610
+
+wysyłka około 50pln
+
+
+Backtrace Generated by Error
+Signal: [0x000000000000000b] PID: [0x000000000007dae5] PC: [0x000000000132b9a4] FP: [0x00007fbfdbd871b0] SIGSEGV: SEGV_ACCERR SI_ADDR : [0x00007fbfdbfff000]
+(_ZN6Basics9Backtrace11DoBacktraceEiiPvS1_+0x89b) [0x38d5ef5]
+(_ZN6Basics20GlobalSignalHandlers14logFatalSignalEiPvS1_+0xd2) [0x3926c74]
+(_ZN6BasicsL26sigHandler_withinATryCatchEiP7siginfoPv+0x233) [0x3927fe6]
+(_ZN6BasicsL10sigHandlerEiP7siginfoPv+0xe) [0x39280f9]
+(__restore_rt+0x0) [0x3fbd80f7e0]
+(_ZN2EE16ColumnAccessBase24ensureColumnMaterializedERKNS_11VEvalParamsEi+0x59c) [0x132b9a4]
+(_ZN2EE5VEval27IPColColumnAccessVarLoopIdxEPPKcPii+0x39) [0xb1e69f]
+(_ZN2EE17NJoinOutputWriter9writeSkipEiPi+0x83) [0xd9183f]
+(_ZN2EE9CLTSHJoinILb1ELb1ELb0ELb0ELb0ELb0ELb0EE14runLastOnArrayEPNS_5NJoin5OuterEiPNS_16JoinOutputWriterE+0xad5) [0xdb78d5]
+(_ZN2EE5NJoin3runEv+0x1456) [0xd89338]
+(_ZN2EE9CRProcess23crMakecontextEntryPointEv+0x4f) [0xcab215]
+(__start_context+0x0) [0x3fbd043760]
+END BACKTRACE
+THREAD CONTEXT
+Thread type: EE Internal Command Queue Thread
+Request: INSERT INTO Risk_Department_Extracts.CalculatedRows_3a SELECT base.SPCode, base.SCHEME_ID, base.MEMBER_ID, base.INIT_MEM_IF, base.MAIN_POL_IND, base.INIT_STATE, base.INIT_AGE_MP, base.SEX_MP, base.INIT_AGE_SPS_MP, base.SEX_SPS_MP, base.AGE_DIFF_VAL_IND, base.DURATIONIF_M, base.ADD_SERVE_M, base.NORM_RET_AGE, base.NORM_RET_AGE_ADD_M, base.BASIS_ID_OP, base.BASIS_ID_NP, base.BASIS_ID_OPT, base.BASIS_ID_NPT, base.BASIS_ID_AOP, base.CODE_HF_1, base.EXPENSE_ID_OP, base.EXPENSE_ID_NP, base.EXPENSE_ID_NP_RIS, base.EXPENSE_ID_OPT, base.EXPENSE_ID_NPT, base.EXPENSE_ID_NPT_RIS, base.EXPENSE_RC_ID_OP, base.EXPENSE_RC_ID_NP, base.EXPENSE_RC_ID_NP_RIS, base.EXPENSE_RC_ID_NPT, base.EXPENSE_RC_ID_NPT_RIS, base.END_AGE_OPT, base.END_AGE_OPT_ADD_M, base.END_AGE_NPT, base.END_AGE_NPT_ADD_M, base.MARRD_V_PC_S, base.INC_RTP_TYPE, base.INC_SPS_TYPE, base.INC_OPT_TYPE, base.INC_NPT_TYPE, base.INIT_SAL_PP, base.INIT_FRN_PP, base.INIT_PSAL_PP, base.INIT_PSN_PP, base.PARTTIME_PC, base.INIT_DIDP_PP, base.INIT_DARP_PP, base.INIT_DISP_PP, base.INIT_PSNOOP_PP, base.INIT_PSNOPT_PP, base.INIT_NPT_PP, base.INIT_NPTD_PP, base.INIT_DISL_PP, base.INIT_NPTL_PP, base.INIT_DAOP_PP, base.INIT_DWOP_PP, base.INIT_DWAO_PP, base.MP_FDD_RETP, base.MP_FDD_DISP, base.MP_FDD_DARP, base.MP_FDD_OOP, base.MP_FDD_OPT, base.MP_FDD_NPT, base.MP_EV_RETP, base.MP_EV_DISP, base.MP_EV_DARP, base.MP_EV_OOP, base.MP_EV_OPT, base.MP_EV_NPT, base.ACCRUAL_PC, base.ACCRUAL_OPT_PC, base.DARP_PC, base.DISP_PC, base.ACCRL_DAR_PC, base.ACCRL_DIS_PC, base.DISL_PC, base.NPT_PC, base.ACCRL_NPT_PC, base.NPTL_PC, base.CODE_RETP_REGELING, base.CODE_DISL_REGELING, base.CODE_NPT_REGELING, base.IND_RRG_RETP, base.IND_RRG_DISP, base.IND_RRG_DARP, base.IND_RRG_OPT, base.IND_RRG_NPT, base.IND_RRG_AOP, base.MP_B_DC_CBN, base.INIT_D_BN_PP, base.MP_GP_DARP, base.MP_GP_DISP, base.MP_GP_OPT, base.MP_GP_RETP, base.MP_GP_NPT, base.MP_NP_DARP, base.MP_NP_DISP, base.MP_NP_OPT, base.MP_NP_RETP, base.MP_NP_NPT, base.INC_DAOP_PC, base.INIT_PDAB_PC, base.INC_DWAO_PC, base.INIT_DAB_M, base.DEFT_DWOP_M, base.INIT_DUR_ACT_M, base.INIT_NWD_INACT_PC, base.IND_PS_RETP, base.IND_PS_DISP, base.IND_PS_DARP, base.IND_PS_OPT, base.IND_PS_NPT, base.IND_PS_AOP, base.IND_PS_WOP, base.IND_PS_WAO, base.IND_PS_OOP, base.IND_PS_RSKL, base.IND_PS_RSKP, base.MP_RES_RETP, base.MP_RES_SPS, base.MP_RES_OOP, base.MP_RES_OPT, base.MP_RES_NPT, base.MP_RES_DAB, base.MP_UPR_RETP, base.MP_UPR_SPS, base.MP_UPR_OPT, base.MP_UPR_NPT, base.MP_UPR_DAB, base.DIS_FND_METH, base.NPT_FND_METH, base.MTH_PSN_INC, base.PREM_ID_NPT_RIS, base.CODE_PREM_NPT_RIS, base.CODE_PREM_AOP, base.INIT_DAOL_PP, base.Opbouw_PvWaardeProphet, base.Opbouw_AanspraakToegekend, base.RiskType, base.Opbouw_CodeTarief, base.Opbouw_CodeStatus, base.cReg_SoortPensreg, base.Opbouw_ProductCode, base.Opbouw_Winstcode, base.cNaw_Cntrnr, base.Opbouw_CodeActFactor, base.Opbouw_GrondslagVolgNummer, base.Opbouw_CodeTariefSubNummer, base.SettlementTypeProphet, base.COverrenteHoofdSub_HoofdCntrnr, base.CntrNAW_administratienummerSA, base.WinstdelingsCodeProphet, base.SPCode_Min, base.SPCode_Max, base.Basis_BzWPOpgebouwd, base.VerzTarief_AansprakenElders, base.ShadeRETP, base.ShadeSPS, base.ShadeOOP, base.ShadeOPT, base.ShadeNPT, base.ShadeDAB, base.cNaw_contractantnr, base.OpbouwPolis_ExternNummer, base.OpbouwPolis_CodeRegeling, base.CTariefSub_TijdsevenredigJN, base.opbouwpolis_VNBNewVerl, base.OpbouwPolis_BurgerServiceNummer, base.OpbouwPolis_GeboorteDatumVerz, base.DNB_ID, base.CLIENT_ID, base.REINSURED_ID, base.PRODUCT_CODE, base.Source, base.filename, base.Rente, base.RowType, base.INIT_DWOP_PP_SA, base.INIT_STATE1_6, base.POLisRETP, base.RETPOpbouw_GrondslagVolgNummer, base.RETPOpbouw_CodeTariefSubNummer, base.DISPDARPOpbouw_GrondslagVolgNummer, base.DISPDARPOpbouw_CodeTariefSubNummer, base.NPAanspraakToegekend, base.RETPAanspraakToegekend, base.OOPMarrd_v_pc_s, base.SumShadeRETP, base.SumShadeSPS, base.SumShadeOOP, base.SumShadeOPT, base.SumShadeNPT, base.SumShadeDAB, base.minCODE_RETP_REGELING, base.minCODE_DISL_REGELING, base.minCODE_NPT_REGELING, base.Onlystatus24, base.SumOpbouw_PVWaardeProphet, base.SumOpbouw_PVWaardeProphetDISL, base.SumOpbouw_PVWaardeProphetNPT, base.ActiveSameBasis, base.basisRow, base.track, CASE WHEN (base.Source <> 'RISICOHER'::varchar(9)) THEN CASE WHEN ((RETP.MEMBER_ID IS NOT NULL) AND (DISP_DARP.MEMBER_ID IS NOT NULL)) THEN 1 ELSE 0 END ELSE row_number() OVER (PARTITION BY base.MEMBER_ID) END AS FULLrow, dense_rank() OVER (PARTITION BY base.MEMBER_ID, base.basisRow, CASE WHEN (base.CODE_RETP_REGELING <> 10) THEN (-1) ELSE base.Opbouw_GrondslagVolgNummer END, CASE WHEN (base.CODE_RETP_REGELING <> 10) THEN (-1) ELSE base.Opbouw_CodeTariefSubNummer END, base.RowType, CASE WHEN ((RETP.MEMBER_ID IS NOT NULL) AND (DISP_DARP.MEMBER_ID IS NOT NULL)) THEN 1 ELSE 0 END ORDER BY base.ActiveSameBasis DESC, CASE WHEN (base.RiskType = 'RETP'::varchar(4)) THEN abs(base.Opbouw_AanspraakToegekend) WHEN (base.RiskType = ANY (ARRAY['DISP_DARP'::varchar(9), 'DARP'::varchar(4)])) THEN abs(base.Opbouw_PvWaardeProphet) ELSE 0::numeric(18,0) END DESC, base.Opbouw_AanspraakToegekend DESC, base.BASIS_ID_OP, base.BASIS_ID_NP) AS Con FROM ((Risk_Department_Extracts.CalculatedRows_2a base LEFT  JOIN (SELECT CalculatedRows_2a.Opbouw_GrondslagVolgNummer, CalculatedRows_2a.Opbouw_CodeTariefSubNummer, CalculatedRows_2a.SCHEME_ID, CalculatedRows_2a.MEMBER_ID, CalculatedRows_2a.filename, CalculatedRows_2a.RiskType FROM Risk_Department_Extracts.CalculatedRows_2a GROUP BY CalculatedRows_2a.Opbouw_GrondslagVolgNummer, CalculatedRows_2a.Opbouw_CodeTariefSubNummer, CalculatedRows_2a.SCHEME_ID, CalculatedRows_2a.MEMBER_ID, CalculatedRows_2a.filename, CalculatedRows_2a.RiskType) RETP ON (((RETP.Opbouw_GrondslagVolgNummer = base.Opbouw_GrondslagVolgNummer) AND (RETP.Opbouw_CodeTariefSubNummer = base.Opbouw_CodeTariefSubNummer) AND (RETP.SCHEME_ID = base.SCHEME_ID) AND (RETP.MEMBER_ID = base.MEMBER_ID) AND (RETP.filename = base.filename) AND (RETP.RiskType = 'RETP'::varchar(4))))) LEFT  JOIN (SELECT CalculatedRows_2a.Opbouw_GrondslagVolgNummer, CalculatedRows_2a.Opbouw_CodeTariefSubNummer, CalculatedRows_2a.SCHEME_ID, CalculatedRows_2a.MEMBER_ID, CalculatedRows_2a.filename, CASE WHEN (CalculatedRows_2a.RiskType = ANY (ARRAY['DISP_DARP'::varchar(9), 'DARP'::varchar(4)])) THEN 'DISP_DARP'::varchar(9) ELSE CalculatedRows_2a.RiskType END AS RiskType FROM Risk_Department_Extracts.CalculatedRows_2a GROUP BY CalculatedRows_2a.Opbouw_GrondslagVolgNummer, CalculatedRows_2a.Opbouw_CodeTariefSubNummer, CalculatedRows_2a.SCHEME_ID, CalculatedRows_2a.MEMBER_ID, CalculatedRows_2a.filename, CASE WHEN (CalculatedRows_2a.RiskType = ANY (ARRAY['DISP_DARP'::varchar(9), 'DARP'::varchar(4)])) THEN 'DISP_DARP'::varchar(9) ELSE CalculatedRows_2a.RiskType END) DISP_DARP ON (((DISP_DARP.Opbouw_GrondslagVolgNummer = base.Opbouw_GrondslagVolgNummer) AND (DISP_DARP.Opbouw_CodeTariefSubNummer = base.Opbouw_CodeTariefSubNummer) AND (DISP_DARP.SCHEME_ID = base.SCHEME_ID) AND (DISP_DARP.MEMBER_ID = base.MEMBER_ID) AND (DISP_DARP.filename = base.filename) AND (DISP_DARP.RiskType = ANY (ARRAY['DISP_DARP'::varchar(9), 'DARP'::varchar(4)])))))
+           2: Root
+           1: GroupByNothing
+           0: DataTarget
+FAULT =>   3: NewEENode
+           4) ExprEval         depth=(0) parent=0, peer#0; outTup nCol=207,nkey=0,inlSz=1971,fixSz=1840
+           5) ExprEval         (1) 4, #0; out 206,0,1963,1832
+           6) Analytical       (2) 5, #0; out 222,0,2247,1968
+           7) Sort             (3) 6, #0; CRPstate=2; out 221,0,2239,1960
+           8) ExprEval         (4) 7, #0; out 221,0,2239,1960
+           9) Analytical       (5) 8, #0; out 217,0,2199,1920
+          10) StorageMerge     (6) 9, #0; out 216,0,2191,1912
+ (PPFAULT) => Join             (id=11) (7) 10, #0; nInputs=2; CRPstate=2; out 216,0,2191,1912
+          12) Join             (8) 11, #0; nInputs=2; CRPstate=2; out 11,0,216,88
+          13) Scan             (9) 12, #0; out 5,0,94,40
+          14) Filter           (9) 12, #0; out 6,0,122,48
+          15) ParallelUnion    (10) 14, #0; nInputs=8; out 6,0,122,48
+          16) GroupByHash      (11) 15, #0; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          17) StorageUnion     (12) 16, #0; out 6,0,122,48
+          18) GroupByPipe      (13) 17, #0; out 6,0,122,48
+          19) ExprEval         (14) 18, #0; out 6,0,122,48
+          20) Scan             (15) 19, #0; out 6,0,122,48
+          21) GroupByHash      (11) 15, #1; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          22) StorageUnion     (12) 21, #1; out 6,0,122,48
+          23) GroupByHash      (11) 15, #2; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          24) StorageUnion     (12) 23, #2; out 6,0,122,48
+          25) GroupByHash      (11) 15, #3; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          26) StorageUnion     (12) 25, #3; out 6,0,122,48
+          27) GroupByHash      (11) 15, #4; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          28) StorageUnion     (12) 27, #4; out 6,0,122,48
+          29) GroupByHash      (11) 15, #5; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          30) StorageUnion     (12) 29, #5; out 6,0,122,48
+          31) GroupByHash      (11) 15, #6; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          32) StorageUnion     (12) 31, #6; out 6,0,122,48
+          33) GroupByHash      (11) 15, #7; CRPstate=4;hash sca=17; kvlen=(48,0) out 6,0,122,48
+          34) StorageUnion     (12) 33, #7; out 6,0,122,48
+          35) Filter           (8) 11, #0; out 6,0,122,48
+          36) ParallelUnion    (9) 35, #0; nInputs=8; out 6,0,122,48
+          37) GroupByHash      (10) 36, #0; CRPstate=4;hash sca=16; kvlen=(48,0) out 6,0,122,48
+          38) StorageUnion     (11) 37, #0; out 6,0,122,48
+          39) GroupByPipe      (12) 38, #0; out 6,0,122,48
+          40) ExprEval         (13) 39, #0; out 6,0,122,48
+          41) Scan             (14) 40, #0; out 6,0,122,48
+          42) GroupByHash      (10) 36, #1; CRPstate=4;hash sca=16; kvlen=(48,0) out 6,0,122,48
+          43) StorageUnion     (11) 42, #1; out 6,0,122,48
+          44) GroupByHash      (10) 36, #2; CRPstate=4;hash sca=16; kvlen=(48,0) out 6,0,122,48
+          45) StorageUnion     (11) 44, #2; out 6,0,122,48
+          46) GroupByHash      (10) 36, #3; CRPstate=4;hash sca=16; kvlen=(48,0) out 6,0,122,48
+          47) StorageUnion     (11) 46, #3; out 6,0,122,48
+
+
+PKO zgłoszenie: 128A1286D
+
+30.185.252.11
+FV&AmuYqx!7dGVBR
+
+
+[‎28.‎03.‎2019 15:54]  Duda, Sebastian:
+tak
+setup and start bedzie trzeba zrobic a pozniej sprawdzic czy chodzi refresh
+
+[‎28.‎03.‎2019 15:55]
+a skrypt jest w tam w katalogu czy jak się to uruchamia?
+
+[‎28.‎03.‎2019 15:55]  Duda, Sebastian:
+/backups/refresh/scripts/standby_setupandstart.sh LBSCOREY LBSCBCY
+
+[‎28.‎03.‎2019 15:55]
+jaki setu i start
+
+[‎28.‎03.‎2019 15:55]  Duda, Sebastian:
+/u01/app/oracle/scripts/businesscopy_refresh.sh LBSCBCY 60
+tak bo on sie nie pozbiera jak mu wylaczysz archivelogi i trzeba zrobic setup and start
+
+/exports/databases/depers_pcz/depersonalization.sh LBSFOY oracle FO force
+
+/exports/databases/depers_pcz/depersonalization.sh LBSCOREY oracle CORE force
+
+
+Executing script: /exports/databases/depers_pcz/core/MASK1_enablecheckcons.ddl
+Log is writing into /exports/databases/depers_pcz/logs/LBSCOREY/MASK1_enablecheckcons_20190328_1721.log
+ORA-02430: cannot enable constraint (IRRB_CRN_CHK) - no such constraint
+ORA-02430: cannot enable constraint (IRRB_CRN9_CHK) - no such constraint
+Please verify log file: /exports/databases/depers_pcz/logs/LBSCOREY/MASK1_enablecheckcons_20190328_1721.log
+Execution forced!
+yes
+
+
+Executing script: /exports/databases/depers_pcz/core/MASK1_createconstraints.sql
+Log is writing into /exports/databases/depers_pcz/logs/LBSCOREY/MASK1_createconstraints_20190328_1721.log
+ORA-02298: cannot validate (COREOWN.NYBAC_FINST_FK) - parent keys not found
+Please verify log file: /exports/databases/depers_pcz/logs/LBSCOREY/MASK1_createconstraints_20190328_1721.log
+Execution forced!
+yes
+
+Executing script: /exports/databases/depers_pcz/core/parties_script.sql
+Log is writing into /exports/databases/depers_pcz/logs/LBSCOREY/parties_script_20190328_1721.log
+ORA-01917: user or role 'COREOBJ_SEL_ROLE' does not exist
+ORA-01917: user or role 'DIS10GADM_SELECT_ROLE' does not exist
+ORA-01917: user or role 'ENQ_USER' does not exist
+ORA-01917: user or role 'LEA6000V' does not exist
+ORA-01917: user or role 'LEA6010V' does not exist
+ORA-01917: user or role 'LEA6030V' does not exist
+ORA-01917: user or role 'LEA6040V' does not exist
+ORA-01917: user or role 'LEA6050V' does not exist
+ORA-01917: user or role 'LEA6060V' does not exist
+ORA-01917: user or role 'ROLE_ENQ' does not exist
+ORA-01917: user or role 'R_OBJECTS' does not exist
+ORA-01917: user or role 'U04888' does not exist
+ORA-01917: user or role 'U08691' does not exist
+ORA-01917: user or role 'U_OBJECTS' does not exist
+Please verify log file: /exports/databases/depers_pcz/logs/LBSCOREY/parties_script_20190328_1721.log
+Execution forced!
+yes
+
+
+Executing script: /exports/databases/depers_pcz/core/refresh_views.sql
+Log is writing into /exports/databases/depers_pcz/logs/LBSCOREY/refresh_views_20190328_1721.log
+ORA-04044: procedure, function, package, or type is not allowed here
+ORA-20019: ORA-14551: cannot perform a DML operation inside a query - occurred
+ORA-06512: at "COREOWN.PACK_AFFORDABILITY_AUDIT", line 1352- occurred in
+ORA-06512: at "COREOWN.YBS_APPLICATION_ERROR", line 148
+ORA-06512: at "COREOWN.PACK_LEAP_DIARY", line 1806
+ORA-04044: procedure, function, package, or type is not allowed here
+ORA-20019: ORA-14551: cannot perform a DML operation inside a query - occurred
+ORA-06512: at "COREOWN.PACK_AFFORDABILITY_AUDIT", line 1352- occurred in
+ORA-06512: at "COREOWN.YBS_APPLICATION_ERROR", line 148
+ORA-06512: at "COREOWN.PACK_LEAP_DIARY", line 1806
+Please verify log file: /exports/databases/depers_pcz/logs/LBSCOREY/refresh_views_20190328_1721.log
+Execution forced!
+yes
+
+
+ALTER TABLE COREOWN.NON_YBS_BANK_ACCOUNTS ADD (
+  CONSTRAINT NYBAC_FINST_FK
+  FOREIGN KEY (FINST_PARTY_SYSID)
+  REFERENCES COREOWN.FINANCIAL_INSTITUTIONS (PARTY_SYSID)
+  DISABLE NOVALIDATE);
+
+
+CZYNSZ - ŻOLIBORZ
+WSM ŻOLIBORZ CENTRALNY
+85 1160 2244 5060 0000 0001 7016
+PRÓCHNIKA 01-585 WARSZAWA
+PATRYK SMOCZYNSKI PROCHNIKA 8/16 NUMER ID. 17016.
+
+
+TMP=/tmp; export TMP
+TMPDIR=$TMP; export TMPDIR
+
+ORACLE_HOSTNAME=ukbilspllib099.1543.1336.ecs.hp.com; export ORACLE_HOSTNAME
+ORACLE_BASE=/u01/app/oracle; export ORACLE_BASE
+ORACLE_HOME=$ORACLE_BASE/product/11.2.0/dbhome_1; export ORACLE_HOME
+ORACLE_SID=dummy; export ORACLE_SID
+
+PATH=/usr/sbin:$PATH; export PATH
+PATH=$ORACLE_HOME/bin:$PATH; export PATH
+
+LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib; export LD_LIBRARY_PATH
+CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib; export CLASSPATH
+
+(address=(protocol=tcp)(host=lbsdbuat2.1543.1336.ecs.hp.com)(port=1521))
+
+status=`${ORACLE_HOME}/bin/sqlplus -s << _EOF
+sys/${INITPW}@$DBSID as sysdba
+
+
+status=`${ORACLE_HOME}/bin/sqlplus -s / as sysdba << _EOF
+sys/${INITPW}@$DBSID as sysdba
+set heading off feedback off
+select status from v\\$instance;
+exit
+_EOF`
+
+
+update PROPERTY_TITLE_NUMBERS set title_num='XXXXXXY' where pt_prefix = 'XXX' and title_num='XXXXXX';
+
+
+potwierdzenie zawarcia umowy o prowadzenie ike
+
+ 01.04 - on-call baza LBSINFR padła na 624. False alert. Rzczywista praca 20 minut (start 00:45), wpisać godzinę
+14.04 - zmiana wartości kolumny z 10 na 20 znaków, przygotowania: 14:30 - 15:30
+
+
+Kredyt w karcie
+833,33 - 80 1030 0022 9702 6556 8793 5840
+
+Kredyt
+669 - 69 1030 0019 0200 0718 0072 0514
+
+
+
+Konrad Brylla
+Hauptstraße 19
+74206 BAD WIMPFEN
+Deutschland
+
+Design script is located in /home/dbadmin/psm1_design.sql
+Deployment script is located in /home/dbadmin/psm1_deploy.sql
+
+Design script is located in /opt/vertica/examples/VMart_Schema/psmoczynski3_01_design.sql
+Deployment script is located in /opt/vertica/examples/VMart_Schema/psmoczynski3_01_deploy.sql
+
+
+Design script is located in /opt/vertica/examples/VMart_Schema/psmoczynski3_02_design.sql
+Deployment script is located in /opt/vertica/examples/VMart_Schema/psmoczynski3_02_deploy.sql
+
+poniedziałek 12
+rozbrat 34/36 lok 106
+
+
+
+
+Design script is located in /opt/vertica/examples/VMart_Schema/psm3_03_sql_design.sql
+Deployment script is located in /opt/vertica/examples/VMart_Schema/psm3_03_sql_deploy.sql
+
+
+
+
+
+COREOWN	PACKAGE BODY	PACK_REFRESH_NOTCORE
+SYSTEM	PACKAGE BODY	PACK_REFRESH_NOTCORE
+
+
+SYS@LBSFO AS SYSDBA> show errors
+No errors.
+
+-rw-r--r--. 1 root root  7345 Apr 14 18:50 hot_database_backup_all_c2_LBSFO.sh.2019_04_14_18_20.log
+-rw-r--r--. 1 root root  3966 Apr 14 19:33 archive_log_backup_LBSFO.sh.2019_04_14_19_30.log
+-rw-r--r--. 1 root root  4931 Apr 14 21:35 archive_log_backup_LBSFO.sh.2019_04_14_21_31.log
+-rw-r--r--. 1 root root  5122 Apr 14 23:34 archive_log_backup_LBSFO.sh.2019_04_14_23_31.log
+[root@ukbilspllib613 LBSFO]# vi hot_database_backup_all_c2_LBSFO.sh.2019_04_14_18_20.log
+
+
+alter table COREOWN.SAVING_APPLICATION modify (INITIAL_DEPOSIT_WP_REF_ID varchar2(20 CHAR));
+
+
+COREOWN	SAVING_APPLICATION_15042019
+COREOWN	SAVING_APPLICATION
+
+SAVING_APPLICATION	INITIAL_DEPOSIT_WP_REF_ID	VARCHAR2		20	20
+
+COREOWN	PACKAGE BODY	PACK_REFRESH_NOTCORE
+SYSTEM	PACKAGE BODY	PACK_REFRESH_NOTCORE
+
+SYS@LBSFO AS SYSDBA> show error
+No errors.
+SYS@LBSFO AS SYSDBA> show errors
+No errors.
+SYS@LBSFO AS SYSDBA>
+
+
+Szymon Piechowiak
+ul. Henryka Sienkiewicza 26/5
+64-100 Leszno
+szpiechowiak@outlook.com
+785989422
+
+
+a/0$x2dz:oNO!C
+UCw8aG5r?2%6-gzG
+
+D2^:n.a'9sJq-vn3
+)(F5+thP\7d-3%q@
+
+302135
+
+
+Serwis Oris
+699 970 740
+
+
+
+
+
+Małgorzata Karpińska
+ul. Ziołowa 16
+96-321 Jastrzębnik
+
+
+vellamo s#5H\zts>WTz!9;[
+
+
+
+
+
+
+android-e9807c584b6c6d3e
+
+Nadgodziny:
+1.05 - 1:30 1h
+1.05 - 8:00 1h
+1.05 - 23:00 1h
+4.05 - 10:00 2h COREW
+
+
+konto w budimex : hp121
+Traczyk, Dominik 14:04:
+Hasło 1234REWQasdf - Smokq0519!
+Smoczynski, Patryk 14:05:
+
+FV&AmuYqx!7dGVBR
+SP:89x!<?'s*wEF[
+
+
+ldapmodify -h corp.budimex.net -Z -f adDisplaySpecifiers_us.ldif
+
+ldapmodify -h corp.budimex.net -Z -f adDisplaySpecifiers_us.ldif
+
+80 1030 0022 9702 6556 8793 5840
+6671,42
+
+69 1030 0019 0200 0718 0072 0514
+23 441,34
+
+82 1030 0022 8908 0696 8713 4650
+6129,57
+
+
+who we suppor
+what we do
+
+Title: Oracle 11g integration with Active Directory
+
+Content:
+On out dev env I'm trying to configure oracle 11g users authentication in microsoft active directory.
+I followed documentation (https://docs.oracle.com/cd/B28359_01/win.111/b32010/active_dir.htm) but when I'm trying to authenticate a user I get the error message that password or username is incorret. Please adcive.
+I'm attaching alert.log, ldap.ora, sqlnet.ora, parameters, ad screenshot and some trace file.
+
+
+Installing Oracle software
+Creating Oracle databases
+Performing upgrades of the database and software to new release levels
+Starting up and shutting down the database
+Managing the database's storage structures
+Managing users and security
+Managing schema objects, such as tables, indexes, and views
+Making database backups and performing recovery when necessary
+Proactively monitoring the database's health and taking preventive or corrective action as required
+Monitoring and tuning performance
+
+
+ktpass -princ kerberos5/war1s110.budimex.net@BUDIMEX.NET -ptype KRB5_NT_PRINCIPAL /
+ -crypto AES256-SHA1 -pass 1234REWQasdf -mapuser war1s110.budimex.net@BUDIMEX.NET /
+ -out c:\keytab
+
+
+taboret karup coumtry venge
+- jak wygląda to venge
+- czas oczekiwania
+- 3 sztuki
+695 897 217
+
+książka
+koszykowa 34/50 p1
+
+Vba7Cy58th*4vb
+U_?#Quqa7d+$$N
+
+style="display:  table;height: 74px; width:1179px; overflow: hidden;border:1px solid #b6bfc8; text-align: center; background-color:#e8eaed;color:#d2a379;
+
+http://news.bbc.co.uk/2/hi/middle_east/2988455.stm
+
+find  -type f -name '*.trc' -mtime +7 -exec rm {} \;
+
+
+
+1. entry
+2. intem
+3. spec
+4. expert
+
+
+samochód: 43445,90
+kredyt citi: 58 178,92
+witold: 5000
+ojciec: 1200
+
+Dywan bawełniany TROPICAL PINK - Lorena Canals [KP: C-TROP-PINK]
+Aneta Senator-Wójcik
+ul. A. Gieysztora 2/70
+02-999 Warszawa
+telefon: 696223611
+Email: anetasenator@wp.pl
+
+P@cSZDG,mL,36wdJ/jm4
+
+There are 3 Vertica nodes. Servers are CACLUXVER001 to 003
+
+
+
+
+5XkxSA-2g8B`d9:G
+O1q7*/X5!EfL8H
+ZYyGRMm7j!7Py4Y^
+
+
+
+
+Magdalena Wójcik
+Krowoderska 29/18
+31-141, Kraków, pl
+
+2279R
+3299
+WZ-281
+
+
+3 nodes - production - 1 license for 1TB
+3 nodes - pre prod
+
+talend etl:
+real time processing ETI interface
+
+batch mode for another talend:
+execution time starts at 1am till 7am (~8am)
+requesting dates are from previous date from 8 to 8
+
+dashbord for caseis, 1000 clients
+
+less than 2 nodes online means down
+
+sometimes request from ETI are slow
+
+script for backup and restore
+1 vm backup
+2 backup for data
+
+
+8)&c53N[~QkM5W}w
+apoB@nk243
+
+ZYyGRMm7j!7Py4Y^
+
+select max(sequence#) from v$archived_log where applied = 'YES' and REGISTRAR = 'RFS';
+
+P@cSZDG,mL,36wdJ/jm4
+Passw0rd
+Rae2fei8
+nosidełko
+517 521 487
+
+
+nadgodziny
+7h apo
+09.09 2h lbs sprawdzenie cbc, usunięte logi
+12.09 1h cbc p2 na nowej maszynie
+3h od 01-04 noc na naprawianie cbc (13.09)
+backupy auda
+
+
+
+cmmodpkg -e -n ukdoxspllib614 lbsprdsccbc
+
+
+224435950
+
+601 417 123
+
+
+WBS
+US1-AAS01.01.39 - vivat
+US1-AAS01.01.80 - general
+GB1-LBS01.01.01.03 - LBS
+DE1-APO11.02.05.02 - APO
+US1-AAS01.01.34 - AMIA ACP/NAB
+
+polacy od APO:
+zdanowicz jarosław
+piesio paweł
+
+[5/13 10:55 AM] Majchrzak, Pawel
+
+
+
+
+EmpID
+EmployeeName
+EmployeeEmail
+Manager Name
+ExamName
+Exam Voucher #
+Practice Exam Voucher #
+
+11560413
+Patryk Smoczyński
+psmoczynski3@dxc.com
+Michal Kowalczuk
+AWS Certified Solution Architect Associate
+X4E9VF3J
+G9HGN6QT
+
+
+
+nadgodziny:
+30.09 - 0,5h = ooh 110 1,05 - apo zadzwoniło z prośbą o klona baz
+
+NPOWER:
+smocp
+08+Ich$F6M=T
+
+Once all that above is done
+
+1) Logon to one of the SSN SSL Gateways. ( from the main link above). Avoid Frankfurt as it is not working with the jump station. Try Doxford instead.
+
+2) Once session is established to SSL Gateway, you need to create an RDP session to the jumpstation ( 30.185.1.11 )
+
+3) The logon/password for the jumpstation should be sent to you as mentioned above
+
+4) From the jumpstation you can then access the DB unix servers:
+
+devdb
+Development ukbilrwe041.4930.1321.ecs.hp.com 30.185.235.59
+
+predb
+Pre-Production ukbilrweapp002.1540.1321.ecs.hp.com 30.185.0.14 <Cluster
+
+ukbilrwe029.1540.1321.ecs.hp.com 30.185.0.11
+
+ukbilrwe030.1540.1321.ecs.hp.com 30.185.0.12
+
+proddb
+Production ukbilrweapp001.1535.1321.ecs.hp.com 30.184.109.21 <Cluster
+
+ukbilrwe027.1535.1321.ecs.hp.com 30.184.109.18
+
+ukbilrwe028.1535.1321.ecs.hp.com 30.184.109.19
+
+ELEKTRALINK
+User logon name: EBX\dxpsmocz
+Password -  Pa$$word01
+
+Once all that above is done
+
+1) Logon to one of the SSN SSL Gateways. ( from the main link above).
+
+2) Once session is established to SSL Gateway, you need to create an RDP session to one of the two ElectraLink jumpstations ( Wynayrd - 15.169.68.220, Doxford 15.169.68.221 )
+
+3) The logon/password for the jumpstations should be sent to you already (email example below sent by Alan McDonald):
+
+4) From the jumpstations you can then access the DB unix servers:
+
+Hostnames: testdb, proddb ( these are in DNS so need for the ip details)
+
+
+maria rudzińska
+605 651 586
+
+
+
+303
+
+The following are the steps to complete to access Vertica cluster in PREPROD without need to enter LINUX dbadmin password:
+
+1.	Connect to one Vertica node i.e.  CACVERLUX603 with user : datana1         password: Rae2fei8
+2.	sudo –su root
+3.	sudo –su dbadmin
+
+Unfortunately, we do not have the password for datana1 user for PROD.
+
+
+During the review I've checked configuration of database servers. I didn't find any significant problems with the installation. All necessary components like NTP or RSA certificates are installed and set up correctly, swap size is ok. I've also checked database autostart. It's set up well and database will start automatycally after reboot, startup account is set to dbadmin.
+
+
+Problems I found:
+1. Vertica binaries directory isn't added to path. Default shell is set to ksh and PATH variable dosn't include vertica bin directory but after swich to bash binaries are visible.
+2. /data usage almost 80%. According to Vertica best practicies data directory usage shouldn't exeed 60%, we're hiting 80%. We should consider extending the space.
+3. No name accounts at OS level. All users connect using shared, priviledged account. It's a sirious security issue.
+4. No name accounts at DB level. Same as above.
+5. Many objects with high delete vector. Vertica doesn't delete data, it's only flagged as deleted. High number of deleted rows reduce performance. There are many objects with high percentage of deleted rows. We should follow procedures for data deletion.
+
+
+22 839 95 61 - hydraulik
+Robię u Was zakupy regularnie, regularnie też składam reklamację na pakowanie twarogu, który zapakowany w papier, wylewa się, brudzi wszystkie inne produkty w torbie, doprowadza do rozerwania torby. Dziś nie inaczej mimo, że ostatnia reklamacja składana była tydzień temu. Tym razem przemoczona torba rozerwała się w drodze do kuchni, wszystko wypadło a pomidorowa eksplodowała na dywanie. Jak zwykle wszystkie produkty z torby do mycia, do tego przywykłem ale co z dywanem? Pranie kosztuje 200zł.
+
+
+P@cSZDG,mL,36wdJ/jm4 -- stare
+KAgY75b^^{C%z6_3
+
+
+update `produkty` set name = name || ' 1' , code = code || ' 1'
+
+WHOLESALE - CUSTOMER SERVICE
+customerservice@normann-copenhagen.com
+Telefon: +45 35 55 44 59
+----
+wysłałam na tego maila
+----
+a to inna marka HAY:
+HAY  Havnen 1, 8700 Horsens, Denmark  +45 4282 0282
+
++45 35 27 05 25
+
+mads@normann-copenhagen.com
+
+
+
+
+Americas Support SAID	1036 3553 6233
+APJ Support SAID	1025 5228 9671
+EMEA Support SAID	1071 3673 2426
+
+
+VM WareWorkstation Pro 15
+QYZNG-TD9UQ-U1PUM-XMVLX-ZQXGV
+
+
+1. Romain Gary „Obietnica poranka”
+2. Emile Ajar (Romain Gary) „Życie przed sobą”
+3. Mario Vargas Llosa „Wojna końca świata”
+4. Antoni Libera „Madame”
+5. Judith Schalansky „Atlas wysp odległych”
+6. Olga Tokarczuk „Prawiek i inne czasy”
+7. Wasilij Grossman „Życie i los”
+8. Simon Sebag Montefiore „Romanowowie. 1613-1918”
+9. Marcin Napiórkowski „Turbopatriotyzm”
+10. Joshua Foer i in. „Atlas osobliwości”
+
+
+
+DONE:
+1. access requested
+2. github and sharepoint added
+3. vivat name account requested
+4. first KT meeting arranged
+
+TODO:
+1. caseis request
+2. more KT sessions
+
+Smokq1119!
+
+
+vFb`g:Y=%A5YZMPQ9$@y
+
+
+
+select PROFILE, RESOURCE_NAME AS "LIMIT NAME", LIMIT from dba_profiles WHERE RESOURCE_NAME in ('PASSWORD_LIFE_TIME','PASSWORD_REUSE_MAX','PASSWORD_VERIFY_FUNCTION','FAILED_LOGIN_ATTEMPTS', 'IDLE_TIME') ORDER BY 1,2;
+
+set linesize 200
+set pagesize 400
+spool LBSCOREP_PROFILES.txt
+select PROFILE ||'|'|| RESOURCE_NAME ||'|'|| LIMIT as "PROFILE|LIMIT NAME|LIMIT" from dba_profiles WHERE RESOURCE_NAME in ('PASSWORD_LIFE_TIME','PASSWORD_REUSE_MAX','PASSWORD_VERIFY_FUNCTION','FAILED_LOGIN_ATTEMPTS', 'IDLE_TIME');
+spool off
+
+select 'alter profile ' || profile || ' limit ' || resource_name || ' 6;' from dba_profiles where (resource_name = 'FAILED_LOGIN_ATTEMPTS' and limit = 'UNLIMITED') or (resource_name = 'PASSWORD_REUSE_MAX' and limit = 'UNLIMITED');
+
+
+
+12 w sobotę i 6 we wtorek od 17
+
+
+/u01/app/oracle/product/12.1.0.2/dbhome_1/rdbms/log
+
+
+CONFIGURE ARCHIVELOG DELETION POLICY TO BACKED UP 1 TIMES TO DISK;
+DELETE ARCHIVELOG ALL BACKED UP 1 TIMES TO DEVICE TYPE DISK;
+
+alter system set log_archive_dest_state_2='defer'
+
+/u01/app/oracle/scripts/backup_scripts/rman_backup_archived_redo_logs.sh prod12cdb
+
+
+skip inaccessible
+
+run{
+ALLOCATE CHANNEL ch1 DEVICE TYPE SBT_TAPE;
+BACKUP archivelog all skip inaccessible;
+}
+
+
+Castorama: 1213
+Zadłużenie: 2876,46
+
+runas /user:ead\psmoczynski3  "gpupdate /force"
+
+
+Y2c?y}-W-b>.6ELR
+g?f9,Tk,Km+#2~C2
+
+[[HRGpMS/3H8.)4h
+N}JaCBs@_2a4RaVd
+
+
+
+Szkoła Podstawowa nr 351 im. Bolesława Prusa
+Jana Olbrachta 48/56, 01-111 Warszawa
+
+
+Americas Support SAID	1036 3553 6233
+APJ Support SAID	1025 5228 9671
+EMEA Support SAID	1071 3673 2426
+
+
+nadgodziny
+01.08 - 1h od 11 - klon
+02.08 - 0,5h 0d 4:30 tablespace elektra
+03.08 - 0,5h od 20:30 devd processes
+04.08 - 1h od 01:00 klony
+04.08 - 0,5h od 05:30 pytanie o status usera w apo
+04.08 - 0,5h os 22 sktypt z ams
+08.08 - 0,5h od 22 skrypt dla ams
+18.08 - 0,5h od 22 skrypt dla ams
+20.08 - 2h od 16 wdrożenie PG
+21.08 - 0,5h od 02:00 problem z  /u03 w npower
+
+
+cateye czarnobiały
+marokańska koniczyna biało niebieski
+m.bienkowska12@wp.pl
+692092520
+
+501 439 563 - house kolor naturalny
+
+
+605605409
+
+
+Caseis-DBASupportDXC
+
+dT06QRNq6300
+u96W73fHbH2fTn2y=
+
+
+smoczynski.ps.1
+qEpfn1QZZ8q4
+9d7uXU9Jjj
+
+
+BON turystyczny:
+XVDY-CEAY-L5BX-PZ16
+
+97,76
+
+
+
+508 676 588 - off white bn 1
+
+DXC scenario for ADW oracle upgrade from version 12c to 19c
+August 26, 2020
+
+TU 801 500 300
+71 36 92 887
+
+polisa 500000953099
+QYZNG-TD9UQ-U1PUM-XMVLX-ZQXGV
+
+~`^K5PkNcxvZwB3n
+
+533 133 130
+
+Database team has 16 mebers starting from entry level ending on expert. This is important because we can cover all types of database dueties creating offers with desired cost. We have experienced administrators for all of most popular db engins like Oracle, MS SQL, PsgreSQL, mysql and even MongoDB. Our specialists took part in many demanding projects including Oracle RAC and Dataguard configuration. We also have experience in working in 24/7 support. All of our DBA have good comminications skills, we worked for customers from all around the globe.
+
+
+
+Nadgodziny:
+28.09 - 1h elektra /u06 usage
+vs8hbDFS!2
+
+f8E2S&a!
+
+GOAL  DBATeam Leadership. (Strategic)
+
+Team Leadership role delivered in line with expectations (key performance indicators and metrics to be achieved throughout FY21):
+
+YEPR reviews contribution for all team members – 100% compliance
+1on1 meetings with all team members as needed – 100% compliance
+Ensure all team has appropriate PPMC allocations through length of assignment
+Organizational plans for each team member: 1) personal development plan, 2) career discussion input, 3) succession plan proposals for key roles, 4) input to training plan
+Recognition – min. 1 employee recognition update quarterly
+Timely completion of compulsory trainings for all team – 100% compliance
+Team Meeting hosted as needed, but at least bi-monthly – 95% compliance
+Initial vacation plans for all the team members created and aligned according to Team Work rules and DXC polices
+Timely provision of required inputs (budget, recognitions, dashboards, manual billings, ad hoc inputs) – 100% compliance
+Contribute to Pre-sales activities as Service Architect in area of responsibility
+Contribute to Knowledge culture within organization
+Contribute to AMS for Analytics Improvements Initiative
+Build the opportunity for incorporating DBA team into AMS for Analytics organization
+
+akdom - 54920
+22 436 36 45/55
+436 05 39
+
+
+DROP INDEX "COREOWN"."SAVTRN_OPT3";
+
+CREATE INDEX "COREOWN"."SAVTRN_OPT3" ON "COREOWN"."SAVING_TRANSACTIONS" ("SAVACC_ACCOUNT_NUMBER", "BOOK_TRANSACTION", "FR_CODE", "SYSID", "BOOK_AGREED_DATE")
+PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS TABLESPACE "IDXLRG001" PARALLEL 4;
+
+DROP INDEX "COREOWN"."SAVTRN_OPT3";
+
+CREATE INDEX "COREOWN"."SAVTRN_OPT3" ON "COREOWN"."SAVING_TRANSACTIONS" ("SAVACC_ACCOUNT_NUMBER", "BOOK_TRANSACTION", "FR_CODE", "SYSID", "BOOK_AGREED_DATE","TRANS_AMT")
+PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS TABLESPACE "IDXLRG001" PARALLEL 4;
+
+
+
+ADM-BDDE-SUPPORT
+APPS-DBA-LIB-LBS
+APPS-ELAK-BES
+APPS-RWEN-BES
+
+1.	Applications that have no existing test environment
+2.	Applications that have existing test environment but used as production environment
+3.	Applications that have existing test environment and can be used for testing
+4.	Applications that need production copy on test environment and need exact same data (2-time import)
+•	Work in progress. Some group #5 applications may be categorized under group #4 depending on the state of data that they need before performance benchmark (12c) and before the database upgrade (19c).
+5.	Applications that need production copy on test environment but doesn’t need exact same data (1-time import)
+
+
+[‎13.‎10.‎2020 14:06]  Lawska, Dorota Ada:
+ukdoxspllib359 ukbilspllib358
+
+[‎13.‎10.‎2020 14:06]  Lawska, Dorota Ada:
+30.185.17.12 i 30.185.17.13
+
+
+
+
+
+Oliwia Tunikowska
+środa
+
+Mariusz Augustyniak, Arek Witkowski, Tomek Regner
+email, że zacząłem i skończyłem
+
+
+pakiet rw_server z bazy LBSWRU
+
+
+v>+CZk_22f'=2H,q
+W5.zfuQKU.h`fhMq
+
+
+
+--1.
+update coreown.global_values
+set global_cvalue = 'http://30.184.112.86:8888/reports/rwservlet?_hidden_server=rep_wls_reports_ukbilspllib619_hplibra' || '&' || 'envid=hplibra'
+where global_name like '%OFR_REPORTS_SERVLET%'
+and global_name = 'OFR_REPORTS_SERVLET_URL';
+
+--2.
+update coreown.global_values
+set global_cvalue = 'http://30.184.112.87:8888/reports/rwservlet?_hidden_server=rep_wls_reports_ukbilspllib620_hplibra' || '&' || 'envid=hplibra'
+where global_name like '%OFR_REPORTS_SERVLET%'
+and global_name = 'OFR_REPORTS_SERVLET_URL2';
+
+--3.
+update coreown.global_values
+set global_cvalue = 'http://30.184.112.88:8888/reports/rwservlet?_hidden_server=rep_wls_reports_ukdoxspllib621_hplibra' || '&' || 'envid=hplibra'
+where global_name like '%OFR_REPORTS_SERVLET%'
+and global_name = 'OFR_REPORTS_SERVLET_URL3';
+
+
+
+SI2XrzEi8oEEDE
+
+
+
+
+
+
+
+cmhaltpkg lbsprdscrman
+cmhaltpkg lbsprdsccore
+cmhaltpkg lbsprdscfo
+cmhaltpkg lbsprdscintg
+cmhaltpkg lbsprdscaud
+cmhaltpkg lbsprdscmtd
+
+cmrunpkg lbsprdscrman
+cmrunpkg lbsprdsccore
+cmrunpkg lbsprdscfo
+cmrunpkg lbsprdscintg
+cmrunpkg lbsprdscaud
+cmrunpkg lbsprdscmtd
+
+cmmodpkg -e -v  lbsprdscrman lbsprdsccore lbsprdscfo lbsprdscintg lbsprdsccbc
+cmmodpkg -e -v  lbsprdscaud lbsprdscmtd lbsprdsctws lbsprdscwr lbsprdscatmy lbsprdscebs
+
+cmmodpkg -e -v lbsprdscrman lbsprdsccore lbsprdscfo lbsprdscintg lbsprdscaud lbsprdscmtd
+
+
+
+
+
+
+
+nadgodziny:
+12.10 20:00 0,5h elektra
+15.10 01:00 2h LBS switchover
+19.10 01:00 1h LBS switchover
+19.10 03:00 1h Elektralink /u07 usage
+
+25.10  8:45 15m unlock user
+25.10 20:00 15m rman fra usage
+
+[ETL]
+path = /data/ETL
+available = yes
+valid users = dbadmin
+read only = no
+browsable = yes
+public = yes
+writable = yes
+
+
+sqlplus dp7290/UCtgv4TKXAr66qUb=@ADW7T
+sqlplus dp7290/UCtgv4TKXAr66qUb=@ADW6T
+
+alias sql6t='sqlplus dp7290/UCtgv4TKXAr66qUb=@ADW6T'
+alias sql7t='sqlplus dp7290/UCtgv4TKXAr66qUb=@ADW7T'
+
+
+I'd like to thank you Dorota for your commitment to LBS project.
+Your engagement is well known and exeeds expectations.
+Dorota became a synonym of all database related topics.
+I'm very happy you received this reward.
+Thanks
+
+łukasz wierzbicki
+PEA kontakt
+
+
+m4t0547.houston.softwaregrp.net
+m4t0548.houston.softwaregrp.net
+m4t0549.houston.softwaregrp.net
+
+15.120.20.26
+15.120.20.27
+15.120.20.28
+
+Councur ścieżka akceptacji:
+Ewelina
+Greg Rybinski
+ajay-anand@dxc.com
+vinod.bagal@dxc.com
+joseph.beggiani@dxc.com
+
+Oracle DBA support in EU
+Sivanandham, Muruganandham <muruganandham.sivanandham@dxc.com>
+
+$ openssl x509 -noout -modulus -in server.crt | openssl md5
+(stdin)= dc8f02021b33edd7001dff2ca6176b18
+
+$ openssl rsa -noout -modulus -in server.key | openssl md5
+(stdin)= dc8f02021b33edd7001dff2ca6176b18
+
+
+echo "ALTER DATABASE MFIITSMREPORTINGDEV SET EnableSSL = 1;"   | vsql
+
+
+
+PAzR9zxF2K
+
+konto pko
+71 1440 1387 0000 0000 1486 3729
+
+
+Ticket NO for itaccess issue:
+INC6957440
+
+EDWM_SRCE_DATA_CACHE_UPRC
+02.12 16:25 and 16:28 CET.
+02.12 12:25 12:28
+
+Step 1: Eliminate as many candidates as possible
+
+- query v$segment_statistics to identify tables/views/indexes that are in use
+- query v$db_object_cache to identify other objects that are in use
+- query v$sql_plan.object_name to add to the list
+
+Step 2: Then selectively apply audit to the *other* objects
+
+Step 3: (as you said) review the audit trail, add NOAUDIT to anything captured
+
+
+
+Adres usługi: http://eanteeo.pov.com.pl:3395/AnteeoServicesXml_WMS.svc?wsdl
+MFID: 8dda8f84becf08f9cfb4864e21d7c357560670cf
+
+Login: MAGIAPOLNOCY_API
+
+Hasło: G$32bvcP)SJ*gfsrT5RrfDESc
+
+
+UPDATE coreown.data_synchronisation_messages dsm
+SET dsm.successfully_processed = 'Y'
+WHERE dsm.sysid=355346;
+
+Krzysztof Wierzbicki
+CSC - knadydaci z uczelni
+Wierzbicki, Krzysztof <kwierzbicki@dxc.com>
+
+
+- utrzymanie środowisk bazodanowych
+- różne branże i różne technologie
+- bazy każdego głównego producenta
+- środowiska o różnym poziomie skomplikowania, od instalacji z pojedyńczą bazą do wielkich baz w klastrach jak apo czy adw
+- migracje między bazami i do chmur
+
+
+ZIP PIT-11
+rDjSN24G
+
+
+31.03 - 2h w lbs
+11.04 - 12h w PG
+24.04 - 2h gdpr
+3 tygodnie on call
+
+
+ /ora_homes/LBSDEVY_HOME/product/19.0.0/dbhome_1/dbs/spfileLBSCOREY.ora
+
+
+ 21.sie	sobota	Bratysława
+ 22.sie	niedziela	Kranjska Gora	Kranjska Gora
+ 23.sie	poniedziałek	Kranjska Gora	Bled, Vintgar
+ 24.sie	wtorek	Kranjska Gora	Triglav, Bohinj			ew. Bovec, Mongart
+ 25.sie	środa	wybrzeże	Avtovlak, Dolina Soci, Piran
+ 26.sie	czwartek	wybrzeże	Piran			ew. Wenecja
+ 27.sie	piątek	wybrzeże	Postojna, Lubljana
+ 28.sie	sobota	coś tam	Ołomuniec, Svatý kopeček u Mikulova
+ 29.sie	niedziela	DOM
